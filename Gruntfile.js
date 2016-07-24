@@ -25,14 +25,14 @@ module.exports = function (grunt) {
 					disposeCollector: true,
 					src: ['dist/kopper-infinite-scroll.js'],
 					instrumentedFiles: 'lib-lcov',
-					lcovReport: 'test/coverage-results'
+					lcovReport: 'coverage-results'
 				}
 			},
 			all: ['test/**/*.html']
 		},
 		coveralls: {
 			upload: {
-				src: './test/coverage-results/lcov.info'
+				src: 'coverage-results/lcov.info'
 			}
 		}
 	});
