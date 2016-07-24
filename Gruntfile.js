@@ -29,12 +29,18 @@ module.exports = function (grunt) {
 				}
 			},
 			all: ['test/**/*.html']
+		},
+		coveralls: {
+			upload: {
+				src: './test/coverage-results/lcov.info'
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-umd');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-qunit-istanbul');
+	grunt.loadNpmTasks('grunt-coveralls');
 
 	grunt.registerTask('build', ['umd:all', 'uglify:all']);
 	grunt.registerTask('test', ['build', 'qunit:all']);

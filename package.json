@@ -12,7 +12,8 @@
 		"grunt": "*",
 		"grunt-umd": "*",
 		"grunt-contrib-uglify": "*",
-		"grunt-qunit-istanbul": "*"
+		"grunt-qunit-istanbul": "*",
+		"grunt-coveralls": "*"
 	},
 	"scripts": {
     "test": "grunt test"
