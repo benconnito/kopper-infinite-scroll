@@ -11,7 +11,7 @@ require([
 	'qunit',
 	'jquery',
 	'underscore',
-	'../dist/kopper-infinite-scroll.min'
+	'../dist/kopper-infinite-scroll'
 ], function (QUnit, $, _, KopperInfiniteScroll) {
 	QUnit.start();
 

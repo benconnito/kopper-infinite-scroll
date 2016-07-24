@@ -12,7 +12,7 @@
 		"grunt": "*",
 		"grunt-umd": "*",
 		"grunt-contrib-uglify": "*",
-		"grunt-contrib-qunit": "*"
+		"grunt-qunit-istanbul": "*"
 	},
 	"scripts": {
     "test": "grunt test"
