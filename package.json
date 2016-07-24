@@ -1,0 +1,20 @@
+{
+	"name": "kopper-infinite-scroll",
+	"version": "0.0.1",
+	"keywords": ["paginated", "scroll", "html", "javascript"],
+	"author": "Ben Connito",
+	"dependencies": {
+		"jquery": "*",
+		"underscore": "*",
+		"bluebird": "*"
+	},
+	"devDependencies": {
+		"grunt": "*",
+		"grunt-umd": "*",
+		"grunt-contrib-uglify": "*",
+		"grunt-contrib-qunit": "*"
+	},
+	"scripts": {
+    "test": "grunt test"
+  }
+}
