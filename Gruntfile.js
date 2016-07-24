@@ -20,13 +20,21 @@ module.exports = function (grunt) {
 			}
 		},
 		qunit: {
+			options: {
+				coverage: {
+					disposeCollector: true,
+					src: ['dist/kopper-infinite-scroll.js'],
+					instrumentedFiles: 'lib-lcov',
+					lcovReport: 'test/coverage-results'
+				}
+			},
 			all: ['test/**/*.html']
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-umd');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-qunit');
+	grunt.loadNpmTasks('grunt-qunit-istanbul');
 
 	grunt.registerTask('build', ['umd:all', 'uglify:all']);
 	grunt.registerTask('test', ['build', 'qunit:all']);
