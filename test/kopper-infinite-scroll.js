@@ -66,7 +66,7 @@ require([
 	QUnit.test('test created', function (assert) {
 		assert.ok(k);
 	});
-
+	
 	QUnit.test('test clearPageCounts', function (assert) {
 		k.clearPageCounts();
 
@@ -102,8 +102,8 @@ require([
 		var done = assert.async();
 
 		k.testScrollPosition().then(function () {
+			assert.equal(view.find('#1-container').length, 1);
 			assert.equal(view.find('#2-container').length, 1);
-			assert.equal(view.find('.paginated-page-container').length, 2);
 		}).catch(function (error) {
 			console.log(error);
 		}).then(done);
@@ -117,27 +117,37 @@ require([
 		var done = assert.async();
 
 		k.testScrollPosition().then(function () {
+			assert.equal(view.find('#1-container').length, 1);
+			assert.equal(view.find('#2-container').length, 1);
 			assert.equal(view.find('#3-container').length, 1);
-			assert.equal(view.find('.paginated-page-container').length, 3);
+			
+			assert.ok(view.find('#1-container').hasClass('empty'));
+			assert.notOk(view.find('#2-container').hasClass('empty'));
+			assert.notOk(view.find('#3-container').hasClass('empty'));
 		}).catch(function (error) {
 			console.log(error);
 		}).then(done);
 	});
 	
-	QUnit.test('test testScrollPosition for page 4 and drop page 1', function (assert) {
+	QUnit.test('test testScrollPosition for page 4', function (assert) {
 		var done = assert.async();
 
 		k.testScrollPosition().then(function () {
+			assert.equal(view.find('#1-container').length, 1);
+			assert.equal(view.find('#2-container').length, 1);
+			assert.equal(view.find('#3-container').length, 1);
 			assert.equal(view.find('#4-container').length, 1);
-			assert.equal(view.find('.paginated-page-container').length, 4);
 			
 			assert.ok(view.find('#1-container').hasClass('empty'));
+			assert.ok(view.find('#2-container').hasClass('empty'));
+			assert.notOk(view.find('#3-container').hasClass('empty'));
+			assert.notOk(view.find('#4-container').hasClass('empty'));
 		}).catch(function (error) {
 			console.log(error);
 		}).then(done);
 	});
 	
-	QUnit.test('test testScrollPosition for gettingPrevious page 1 and drop page 4', function (assert) {
+	QUnit.test('test testScrollPosition for gettingPrevious page 1 and drop pages', function (assert) {
 		var done = assert.async();
 		
 		view.css({
@@ -145,11 +155,13 @@ require([
 		});
 		
 		k.testScrollPosition().then(function () {
-			assert.equal(view.find('#4-container').length, 0);
+			assert.equal(view.find('#1-container').length, 1);
+			assert.equal(view.find('#2-container').length, 1);
 			assert.equal(view.find('#3-container').length, 0);
-			assert.equal(view.find('.paginated-page-container').length, 2);
+			assert.equal(view.find('#4-container').length, 0);
 			
 			assert.notOk(view.find('#1-container').hasClass('empty'));
+			assert.notOk(view.find('#2-container').hasClass('empty'));
 		}).catch(function (error) {
 			console.log(error);
 		}).then(done);
