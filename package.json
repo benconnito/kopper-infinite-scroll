@@ -1,22 +1,27 @@
 {
-	"name": "kopper-infinite-scroll",
-	"version": "0.0.1",
-	"keywords": ["paginated", "scroll", "html", "javascript"],
-	"author": "Ben Connito",
-	"dependencies": {
-		"jquery": "*",
-		"underscore": "*",
-		"bluebird": "*"
-	},
-	"devDependencies": {
-		"grunt": "*",
-		"grunt-umd": "*",
-		"grunt-contrib-uglify": "*",
-		"grunt-qunit-istanbul": "*",
-		"grunt-coveralls": "*",
-		"grunt-release": "*"
-	},
-	"scripts": {
+  "name": "kopper-infinite-scroll",
+  "version": "0.0.2",
+  "keywords": [
+    "paginated",
+    "scroll",
+    "html",
+    "javascript"
+  ],
+  "author": "Ben Connito",
+  "dependencies": {
+    "jquery": "*",
+    "underscore": "*",
+    "bluebird": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-umd": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-qunit-istanbul": "*",
+    "grunt-coveralls": "*",
+    "grunt-release": "*"
+  },
+  "scripts": {
     "test": "grunt test"
   }
 }
