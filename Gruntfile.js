@@ -46,6 +46,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-qunit-istanbul');
 	grunt.loadNpmTasks('grunt-coveralls');
+	grunt.loadNpmTasks('grunt-release');
 
 	grunt.registerTask('build', ['umd:all', 'uglify:all']);
 	grunt.registerTask('test', ['build', 'qunit:all']);
