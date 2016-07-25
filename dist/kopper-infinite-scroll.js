@@ -14,10 +14,10 @@
   }
 }(this, function ($, _, Promise) {
 
-function KopperInfiniteScroll(view) {
+function KopperInfiniteScroll(view, pageStart) {
 	this.view = view;
 	this.lock = false;
-	this.pageStart = 1;
+	this.pageStart = pageStart || 1;
 
 	this.clearPageCounts();
 }
@@ -71,8 +71,8 @@ KopperInfiniteScroll.prototype.testScrollPosition = function () {
 			//find what container we are on
 			var page = this.pageStart;
 
-			var container = this.view.find('#' + this.getPaginatedContainerId(page));
-			while (this.isScrolledIntoView(container) === false) {
+			var container = this.view.find('#' + this.getPaginatedContainerId(page));			
+			while (container.length > 0 && this.isScrolledIntoView(container) === false && page < this.getCurrentTotalPages()) {				
 				page++;
 				container = this.view.find('#' + this.getPaginatedContainerId(page));
 			}
@@ -116,7 +116,7 @@ KopperInfiniteScroll.prototype.retrieveNextItems = function () {
 		return this.getPage(this.highestPage + 1).then(function (collection) {
 			self.highestPage++;
 
-			return self.managePaginatedContainers(collection || self.getPaginatedCollection());
+			return self.managePaginatedContainers(collection);
 		});
 	} else {
 		return Promise.reject('could not get next or there is no next collection page');
@@ -135,7 +135,7 @@ KopperInfiniteScroll.prototype.retrievePreviousItems = function () {
 		return this.getPage(this.lowestPage - 1).then(function (collection) {
 			self.lowestPage = Math.max(self.pageStart, self.lowestPage - 1);
 
-			return self.managePaginatedContainers(collection || self.getPaginatedCollection());
+			return self.managePaginatedContainers(collection);
 		});
 	} else {
 		return Promise.reject('could not get previous or there is no previous collection page');
@@ -149,7 +149,7 @@ KopperInfiniteScroll.prototype.getPage = function (page) {
 KopperInfiniteScroll.prototype.hasPage = function (page) {
 	var collection = this.getPaginatedCollection();
 
-	if (collection && page > 0) {
+	if (collection && page >= this.pageStart) {
 		if (page <= this.getCurrentTotalPages()) {
 			return true;
 		} else if (collection.links) {
@@ -170,7 +170,7 @@ KopperInfiniteScroll.prototype.getCurrentTotalPages = function () {
 
 
 KopperInfiniteScroll.prototype.getPaginatedCollection = function () {
-	console.error('getPaginatedCollection should be implemented');
+	throw new Error('getPaginatedCollection should be implemented');
 };
 
 KopperInfiniteScroll.prototype.getPaginatedContainerId = function (page) {
@@ -232,7 +232,7 @@ KopperInfiniteScroll.prototype.managePaginatedContainers = function (collection,
 };
 
 KopperInfiniteScroll.prototype.populatePaginatedList = function (collection, container, isNew) {
-	console.error('populatePaginatedList should be implmented');
+	throw new Error('populatePaginatedList should be implmented');
 };
 
 KopperInfiniteScroll.prototype.showLoader = function () {

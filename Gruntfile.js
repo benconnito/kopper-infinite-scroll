@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 			options: {
 				coverage: {
 					disposeCollector: true,
-					src: ['dist/kopper-infinite-scroll.js'],
+					src: ['lib/kopper-infinite-scroll.js'],
 					instrumentedFiles: 'lib-lcov',
 					lcovReport: 'coverage-results'
 				}
@@ -49,5 +49,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-release');
 
 	grunt.registerTask('build', ['umd:all', 'uglify:all']);
-	grunt.registerTask('test', ['build', 'qunit:all']);
+	grunt.registerTask('test', ['qunit:all']);
 };
