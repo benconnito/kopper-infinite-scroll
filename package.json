@@ -1,8 +1,8 @@
 {
   "name": "kopper-infinite-scroll",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [
-		"infinite",
+    "infinite",
     "paginated",
     "scroll",
     "html",
