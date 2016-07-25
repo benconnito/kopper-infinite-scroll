@@ -1,5 +1,6 @@
 {
   "name": "kopper-infinite-scroll",
+	"description": "A small library for infinite paginated scroll views in html/js",
   "version": "0.0.3",
   "keywords": [
     "infinite",
@@ -9,6 +10,17 @@
     "javascript"
   ],
   "author": "Ben Connito",
+	"homepage": "https://github.com/benconnito/kopper-infinite-scroll",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/benconnito/kopper-infinite-scroll.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/benconnito/kopper-infinite-scroll/blob/master/LICENSE.md"
+    }
+  ],
   "dependencies": {
     "jquery": "*",
     "underscore": "*",
@@ -24,5 +36,6 @@
   },
   "scripts": {
     "test": "grunt test"
-  }
+  },
+	"main": "dist/kopper-infinite-scroll.min.js"
 }
