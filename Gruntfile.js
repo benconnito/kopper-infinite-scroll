@@ -34,6 +34,11 @@ module.exports = function (grunt) {
 			upload: {
 				src: 'coverage-results/lcov.info'
 			}
+		},
+		release: {
+			options: {
+				indentation: '\t'
+			}
 		}
 	});
 
