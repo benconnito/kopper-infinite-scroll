@@ -1,36 +1,35 @@
 {
-	"name": "kopper-infinite-scroll",
-	"description": "A small library for infinite paginated scroll views in html/js",
-	"version": "0.0.3",
-	"keywords": [
-		"infinite",
-		"paginated",
-		"scroll",
-		"html",
-		"javascript"
-	],
-	"author": "Ben Connito",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/benconnito/kopper-infinite-scroll.git"
-	},
-	"license": "MIT",
-	"dependencies": {
-		"jquery": "*",
-		"underscore": "*",
-		"bluebird": "*"
-	},
-	"moduleType": [
-		"amd",
-		"globals",
-		"node"
-	],
-	"ignore": [
+  "name": "kopper-infinite-scroll",
+  "description": "A small library for infinite paginated scroll views in html/js",
+  "version": "0.0.4",
+  "keywords": [
+    "infinite",
+    "paginated",
+    "scroll",
+    "html",
+    "javascript"
+  ],
+  "author": "Ben Connito",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/benconnito/kopper-infinite-scroll.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "*",
+    "underscore": "*",
+    "bluebird": "*"
+  },
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "ignore": [
     "node_modules",
     "bower_components",
     "test",
-		"lib"
+    "lib"
   ],
-	"main": "dist/kopper-infinite-scroll.min.js"
+  "main": "dist/kopper-infinite-scroll.min.js"
 }
-
