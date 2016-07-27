@@ -51,5 +51,5 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build', ['umd:all', 'uglify:all']);
 	grunt.registerTask('test', ['qunit:all']);
-	grunt.registerTask('deploy', ['build', 'test', 'release']);
+	grunt.registerTask('publish', ['build', 'test', 'release']);
 };
