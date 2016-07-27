@@ -1,7 +1,7 @@
 {
   "name": "kopper-infinite-scroll",
   "description": "A small library for infinite paginated scroll views in html/js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "keywords": [
     "infinite",
     "paginated",
